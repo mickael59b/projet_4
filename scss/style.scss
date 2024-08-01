@@ -10,6 +10,37 @@ $main-color-tertiaire : #99E2D0;
     margin: 0;
     padding: 0;
 }
+// Styles du loader
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9); // Fond semi-transparent
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; // Assure que le loader est au-dessus du contenu
+    animation: fadeOut 3s forwards; // Animation pour cacher le loader après 3s
+  }
+  
+  .loader {
+    text-align: center;
+  
+    .site-name {
+      font-size: 3rem;
+      color: $main-color-primaire;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 1s ease-in-out infinite; // Animation pour le texte du site
+    }
+  
+    .slogan {
+      font-size: 1.5rem;
+      color: $main-color-secondaire;
+      opacity: 0.7;
+    }
+}
 body{
     min-width: 320px;
 }
@@ -140,6 +171,17 @@ header {
         top: 14px;
         font-size: 14px;
         font-weight: 600;
+    }
+    .info-container {
+        flex: 1;  // Assurez-vous que le conteneur des infos occupe tout l'espace disponible
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .card-title, .card-text {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
     }
 }
 .btn-group{
@@ -303,6 +345,30 @@ footer{
     }
 }
 
+// Animation pour faire apparaître le texte du site
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  // Animation pour faire disparaître le loader
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 @keyframes fadeInUp {
     to {
       opacity: 1;
