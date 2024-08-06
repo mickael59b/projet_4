@@ -126,7 +126,7 @@ header .return {
 .fonctionnement, .restaurants {
   padding: 40px 20px 40px 20px;
 }
-.fonctionnement h1, .restaurants h1 {
+.fonctionnement h2, .restaurants h2 {
   margin-left: 0;
   margin-bottom: 25px;
 }
