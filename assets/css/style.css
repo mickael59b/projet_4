@@ -154,6 +154,7 @@ header .return {
   border-radius: 15px;
   margin-bottom: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
   cursor: pointer;
 }
 .card .img-top {
@@ -202,6 +203,7 @@ header .return {
   padding: 25px;
   display: flex;
   margin-bottom: 30px;
+  width: 100%;
 }
 .btn-group i {
   margin-left: 15px;
@@ -387,7 +389,7 @@ footer .logo-footer {
 @keyframes slide-left {
   0% {
     opacity: 0;
-    transform: translateX(0);
+    transform: translateX(61px);
   }
   100% {
     opacity: 1;
