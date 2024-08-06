@@ -180,10 +180,10 @@ header {
         font-weight: 600;
     }
     .info-container {
-        flex: 1;  // Assurez-vous que le conteneur des infos occupe tout l'espace disponible
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        width: 100%;
         .card-title, .card-text {
             overflow: hidden;
             white-space: nowrap;
@@ -266,7 +266,18 @@ header {
     margin-left: auto;
     margin-right: auto;
     max-width: 1055px;
-    & .title{
+    .card:hover {
+        .info-container{
+            width: calc(100% - 90px);
+        }
+        span {
+            animation: left 750ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+        .checkmark{
+            animation: slide-left 750ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+    }
+    .title{
         display: flex;
         justify-content: center;
         font-family: Shrikhand, cursive;
@@ -278,13 +289,6 @@ header {
 .title span{
     align-content: center;
     margin-left: 16px;
-}
-.menu .card:hover .card-body{
-    width: calc(100% - 60px);
-    animation: slide-left 750ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-.menu .card:hover .checkmark{
-    animation: slide-left 750ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 article{
 
@@ -378,6 +382,14 @@ footer{
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+}
+@keyframes left {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-60px);
     }
 }
 @keyframes slide-left {
