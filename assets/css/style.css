@@ -126,7 +126,7 @@ header .return {
 .fonctionnement, .restaurants {
   padding: 40px 20px 40px 20px;
 }
-.fonctionnement h2, .restaurants h2 {
+.fonctionnement h1, .restaurants h1 {
   margin-left: 0;
   margin-bottom: 25px;
 }
@@ -270,14 +270,18 @@ header .return {
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
-  border-radius: 40px 40px 0px 0px;
+  border-radius: 40px 40px 0 0;
   margin-top: -4rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 1055px;
 }
+.menu .card {
+  position: relative;
+  overflow: hidden;
+}
 .menu .card:hover .info-container {
-  width: calc(100% - 90px);
+  width: calc(100% - 60px);
 }
 .menu .card:hover span {
   animation: left 750ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -285,10 +289,33 @@ header .return {
 .menu .card:hover .checkmark {
   animation: slide-left 750ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+.menu .card:not(:hover) span {
+  animation: right 750ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.menu .card:not(:hover) .checkmark {
+  animation: slide-right 750ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.menu .checkmark {
+  display: flex;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #99e2d0;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(61px);
+  transition: opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 .menu .title {
   display: flex;
   justify-content: center;
-  font-family: Shrikhand, cursive;
+  font-family: "Shrikhand", cursive;
   padding-top: 30px;
   margin-bottom: 30px;
   margin-left: 5px;
@@ -386,14 +413,6 @@ footer .logo-footer {
     transform: translateY(0);
   }
 }
-@keyframes left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-60px);
-  }
-}
 @keyframes slide-left {
   0% {
     opacity: 0;
@@ -401,6 +420,32 @@ footer .logo-footer {
   }
   100% {
     opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(61px);
+  }
+}
+@keyframes left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-61px);
+  }
+}
+@keyframes right {
+  from {
+    transform: translateX(-61px);
+  }
+  to {
     transform: translateX(0);
   }
 }
