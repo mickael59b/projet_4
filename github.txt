@@ -1,2 +1,0 @@
-git@github.com:mickael59b/projet_4.git
-https://mickael59b.github.io/projet_4/
